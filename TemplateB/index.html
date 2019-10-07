@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+  <base href="./">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+  <link rel="stylesheet" href="/ace-lib/styles.css" />
+  <link rel="stylesheet" href="/ace-lib/assets/themes/default/css/main.css" />
+  
+  <!--CUI specified css files -->
+   <link rel="stylesheet" href="assets/css/styles.css" />
+ 
+  <title>My Custom User Interface for AgileApps </title>
+</head>
+ 
+<body>
+    <!-- The Custom HTML template content goes here -->
+		<div class="jumbotron">
+            <div class="container">
+              <h1 class="display-4">Table grid component</h1>
+              <p class="lead">The table grid component exported as "ace-table-grid" </p>
+              <ace-table-grid id="tableGridId" object-id="cases" css-classlist="" column-meta="subject:Subject:STRING:true@|@description:Description:true:false" page-size="5" input-filter="true" can-paginate="true" allow-multi-select="true" sort-by="subject" sort-order="asc" ></ace-table-grid>
+              <script>
+                const tableGridElem = document.querySelector('#tableGridId');
+                tableGridElem.addEventListener('selectionChange', function (data) {
+                  const selectionData = data.detail;
+                  if (selectionData.length) {
+                    console.log(selectionData);
+                  }
+                });
+                tableGridElem.addEventListener('pageSortChange', function (data) {
+                  const paginatorData = data.detail;
+                  console.log(paginatorData);
+                });
+              </script>
+            </div>
+          </div>
+ 
+  <!-- platform assets -->
+  <script type="text/javascript" src="/ace-lib/runtime.js"></script>
+  <script type="text/javascript" src="/ace-lib/es2015-polyfills.js" nomodule></script>
+  <script type="text/javascript" src="/ace-lib/polyfills.js"></script>
+  <script type="text/javascript" src="/ace-lib/scripts.js"></script>
+  <script type="text/javascript" src="/ace-lib/vendor.js"></script>
+  <script type="text/javascript" src="/ace-lib/main.js"></script>
+  
+ <!--CUI specified JS files -->
+  <script src="assets/js/scripts.js"></script>
+ 
+</body>
+ 
+</html>
